@@ -1,0 +1,106 @@
+{
+  "welcome": "Welcome to ClarityExpense",
+  "appName": "ClarityExpense",
+  "tagline": "Track your personal finances with clarity",
+  
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "namePlaceholder": "Enter your full name",
+    "loginButton": "Sign In",
+    "registerButton": "Create Account",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "registerLink": "Register here",
+    "loginLink": "Login here",
+    "loginSuccess": "Login successful!",
+    "registerSuccess": "Account created successfully!",
+    "loginError": "Invalid email or password",
+    "registerError": "Registration failed. Email may already exist."
+  },
+  
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "balance": "Balance",
+    "income": "Income",
+    "expenses": "Expenses",
+    "netBalance": "Net Balance",
+    "expensesByCategory": "Expenses by Category",
+    "recentTransactions": "Recent Transactions",
+    "addTransaction": "Add Transaction",
+    "noTransactions": "No transactions yet",
+    "noCategories": "No categories available"
+  },
+  
+  "transactions": {
+    "title": "Transactions",
+    "amount": "Amount",
+    "description": "Description",
+    "date": "Date",
+    "type": "Type",
+    "category": "Category",
+    "income": "Income",
+    "expense": "Expense",
+    "create": "Create Transaction",
+    "edit": "Edit Transaction",
+    "delete": "Delete Transaction",
+    "amountPlaceholder": "Enter amount",
+    "descriptionPlaceholder": "Enter description",
+    "selectCategory": "Select category",
+    "selectType": "Select type",
+    "createSuccess": "Transaction created successfully!",
+    "createError": "Failed to create transaction",
+    "updateSuccess": "Transaction updated successfully!",
+    "deleteSuccess": "Transaction deleted successfully!",
+    "loading": "Loading transactions..."
+  },
+  
+  "categories": {
+    "title": "Categories",
+    "name": "Category Name",
+    "create": "Create Category",
+    "add": "Add Category",
+    "addButton": "New Category",
+    "namePlaceholder": "Enter category name",
+    "createSuccess": "Category created successfully!",
+    "createError": "Failed to create category",
+    "nameRequired": "Category name is required",
+    "minLength": "Name must be at least 2 characters",
+    "close": "Close",
+    "food": "Food",
+    "transport": "Transport",
+    "utilities": "Utilities",
+    "entertainment": "Entertainment",
+    "health": "Health",
+    "education": "Education",
+    "other": "Other"
+  },
+  
+  "language": {
+    "switch": "Switch language",
+    "spanish": "Spanish",
+    "english": "English",
+    "current": "Current language"
+  },
+  
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "required": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "invalidAmount": "Invalid amount",
+    "total": "Total",
+    "actions": "Actions"
+  }
+}

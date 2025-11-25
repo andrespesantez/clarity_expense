@@ -1,0 +1,106 @@
+{
+  "welcome": "Bienvenido a ClarityExpense",
+  "appName": "ClarityExpense",
+  "tagline": "Controla tus finanzas personales con claridad",
+  
+  "auth": {
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar Sesión",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "name": "Nombre",
+    "emailPlaceholder": "Ingresa tu correo",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "namePlaceholder": "Ingresa tu nombre completo",
+    "loginButton": "Iniciar Sesión",
+    "registerButton": "Crear Cuenta",
+    "noAccount": "¿No tienes cuenta?",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "registerLink": "Regístrate aquí",
+    "loginLink": "Inicia sesión aquí",
+    "loginSuccess": "¡Inicio de sesión exitoso!",
+    "registerSuccess": "¡Cuenta creada exitosamente!",
+    "loginError": "Correo o contraseña inválidos",
+    "registerError": "Error en el registro. El correo puede ya existir."
+  },
+  
+  "dashboard": {
+    "title": "Panel de Control",
+    "welcome": "Bienvenido de nuevo",
+    "balance": "Balance",
+    "income": "Ingresos",
+    "expenses": "Gastos",
+    "netBalance": "Balance Neto",
+    "expensesByCategory": "Gastos por Categoría",
+    "recentTransactions": "Transacciones Recientes",
+    "addTransaction": "Agregar Transacción",
+    "noTransactions": "No hay transacciones aún",
+    "noCategories": "No hay categorías disponibles"
+  },
+  
+  "transactions": {
+    "title": "Transacciones",
+    "amount": "Monto",
+    "description": "Descripción",
+    "date": "Fecha",
+    "type": "Tipo",
+    "category": "Categoría",
+    "income": "Ingreso",
+    "expense": "Gasto",
+    "create": "Crear Transacción",
+    "edit": "Editar Transacción",
+    "delete": "Eliminar Transacción",
+    "amountPlaceholder": "Ingresa el monto",
+    "descriptionPlaceholder": "Ingresa la descripción",
+    "selectCategory": "Selecciona categoría",
+    "selectType": "Selecciona tipo",
+    "createSuccess": "¡Transacción creada exitosamente!",
+    "createError": "Error al crear transacción",
+    "updateSuccess": "¡Transacción actualizada exitosamente!",
+    "deleteSuccess": "¡Transacción eliminada exitosamente!",
+    "loading": "Cargando transacciones..."
+  },
+  
+  "categories": {
+    "title": "Categorías",
+    "name": "Nombre de Categoría",
+    "create": "Crear Categoría",
+    "add": "Agregar Categoría",
+    "addButton": "Nueva Categoría",
+    "namePlaceholder": "Ingresa el nombre de la categoría",
+    "createSuccess": "¡Categoría creada exitosamente!",
+    "createError": "Error al crear categoría",
+    "nameRequired": "El nombre de la categoría es requerido",
+    "minLength": "El nombre debe tener al menos 2 caracteres",
+    "close": "Cerrar",
+    "food": "Comida",
+    "transport": "Transporte",
+    "utilities": "Servicios",
+    "entertainment": "Entretenimiento",
+    "health": "Salud",
+    "education": "Educación",
+    "other": "Otro"
+  },
+  
+  "language": {
+    "switch": "Cambiar idioma",
+    "spanish": "Español",
+    "english": "Inglés",
+    "current": "Idioma actual"
+  },
+  
+  "common": {
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "required": "Este campo es requerido",
+    "invalidEmail": "Correo electrónico inválido",
+    "invalidAmount": "Monto inválido",
+    "total": "Total",
+    "actions": "Acciones"
+  }
+}

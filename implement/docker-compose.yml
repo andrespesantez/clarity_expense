@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  db:
+    image: mysql:8.0
+    container_name: clarityexpense-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword123}
+      MYSQL_DATABASE: clarityexpense
+      MYSQL_USER: clarityapp
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-apppassword123}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - clarityexpense-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-rootpassword123}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # Spring Boot Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: clarityexpense-backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Database connection (uses container name 'clarityexpense-db' as host)
+      SPRING_DATASOURCE_URL: jdbc:mysql://clarityexpense-db:3306/clarityexpense?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: clarityapp
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD:-apppassword123}
+      
+      # JWT Configuration
+      JWT_SECRET: ${JWT_SECRET:-Y2xhcml0eUV4cGVuc2VTZWNyZXRLZXlGb3JKV1RUb2tlbkdlbmVyYXRpb25BbmRWYWxpZGF0aW9uMjAyNQ==}
+      JWT_EXPIRATION: 86400000
+      
+      # JPA Configuration
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "false"
+      
+      # Spring Profile
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8080:8080"
+    networks:
+      - clarityexpense-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Next.js Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: clarityexpense-frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      # Backend API URL (using container name for internal communication)
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+      
+      # Node environment
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    networks:
+      - clarityexpense-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# Volumes for persistent data storage
+volumes:
+  mysql-data:
+    driver: local
+
+# Network for inter-service communication
+networks:
+  clarityexpense-network:
+    driver: bridge
